@@ -1,0 +1,12 @@
+# 토끼군 관련
+#TiniWiki http://dev.tokigun.net/tiniwiki/wiki.php/
+TiniWiki http://127.0.0.1/tiniwiki/wiki.php/
+#tokiWiki http://wiki.tokigun.net/wiki.php/
+tokiWiki http://127.0.0.1/wiki/wiki.php/
+
+
+######## SyntaxParsing 페이지를 위한 테스트용 인터위키
+alpha http://tokigun.net/alpha/
+alpha:beta http://tokigun.net/alpha/beta/
+alpha\ http://tokigun.net/_alpha/
+alphanum http://tokigun.net/%s/temp?id=3&quote=8

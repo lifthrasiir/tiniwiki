@@ -1,0 +1,48 @@
+TABLE.plugin_calendar {
+	border:			1px solid #C6C6D2;
+	font-size:		8pt;
+	font-family:		Tahoma;
+	width:			130px;
+}
+TABLE.plugin_calendar CAPTION {
+	background-color:	#C6C6D2;
+	font-weight:		bold;
+	padding:		2px;
+}
+TABLE.plugin_calendar TH {
+	border:			1px solid #C6C6D2;
+	text-align:		center;
+	width:			12px;
+	padding-left:		2px;
+	padding-right:		0px;
+	font-weight:		bold;
+}
+TABLE.plugin_calendar TH P {
+	text-align:		center;
+	margin:			0px;
+}
+TABLE.plugin_calendar TD P,
+TABLE.plugin_calendar TD P A {
+	text-align:		center;
+	margin:			0px;
+	color:			#000000 ! important;
+	text-decoration:	none;
+}
+TABLE.plugin_calendar TD P A:hover {
+	text-decoration:	underline;
+}
+TABLE.plugin_calendar TD.this_sunday P,
+TABLE.plugin_calendar TD.this_sunday P A {
+	color:			#FF0000 ! important;
+}
+TABLE.plugin_calendar TD.this_saturday P,
+TABLE.plugin_calendar TD.this_saturday P A {
+	color:			#0000FF ! important;
+}
+TABLE.plugin_calendar TD.today {
+	background:		#C0E0C0;
+}
+TABLE.plugin_calendar TD.link A {
+	font-weight:		bold;
+}
+

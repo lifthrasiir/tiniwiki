@@ -1,0 +1,161 @@
+TiniWiki version 0.1
+26 feb 2004 / tokigun / seitero@tokigun.net
+
+
+# introduction
+
+TiniWiki는 아주 작은 위키엔진(the Tiny WikiEngine)입니다.
+기초적인 것만을 제공하기 때문에 깔끔하게 만들어져 있습니다.
+
+
+# design goal
+
+- 기초적인 기능만을 제공해서 깔끔하게 쓸 수 있도록 함.
+- 사용자가 간편하게 설정을 바꾸고 디자인을 바꿀 수 있게 함.
+- 확장성을 높이기 위하여 플러그인 기능 제공. (0.2 - )
+- 최대한 빠른 수행을 보장함.
+
+
+# wiki syntax
+
+이 글은 TiniWiki의 모든 문법을 설명하기 위한 글입니다.
+
+한 글은 문단이라고 하는 구분 단위로 이루어져 있습니다.
+문단을 나누는 기준은 한 줄 이상의 공백 줄입니다.
+따로 명령을 내리지 않을 경우, 한 문단 안에서 둘 이상의 공백이나
+줄 바꿈은 무시됩니다.
+
+줄을 직접 바꾸려면 %를 세 개 씁니다. %%%
+이런 식으로 사용하지요.
+줄 중간에서 %%% 바꿀 수도 있습니다.
+무시하려면 \%%%라고 해야 합니다.
+
+문장을 강조할 때는 __이렇게 굵게__ 할 수 있습니다.
+혹은 ''기울게 하기도'' 합니다. 둘 다 함께 사용할 수 있습니다.
+이와 같이 __ 한 쪽만 있을 경우 무시됩니다. (그대로 출력됩니다)
+\__이렇게 해서__ 무시할 수도 있습니다.
+단, \__하나__ \__둘__ 이렇게 하면 \__ 쌍이 생겨서 제대로 출력되지 않습니다.
+
+종종 고정폭 글꼴을 쓸 때가 있습니다.
+이 때는 {{ 이런 식으로 }} 사용해서 고정폭 글꼴을 쓸 수 있습니다.
+{{
+이렇게 한 줄에 \{{와 }}만 따로 쓰면 완전히 pre 태그와 같은 기능을 합니다.
+이 안에서는 줄 바꿈이 바로 바로 적용됩니다.
+}}
+
+위키의 꽃(..)이라고도 할 수 있는 링크 기능을 지원합니다.
+[ThisPage]와 [ThatPage] 이렇게 링크를 할 수 있습니다.
+[someWiki:ThePage]와 같이 인터링크를 쓸 수도 있고요.
+WikiWord나 wikiXword는 자동으로 링크가 걸립니다. (당근)
+anchor를 바꾸고 싶은 경우 [이렇게|SomePage] 하면 됩니다.
+인터위키는 등록된 것만 자동으로 someWiki:ThePage`와 같이 링크가 걸립니다.
+
+외부 링크가 가능합니다.
+[[http://tokigun.net/]] 혹은 [[tokigun.net]]이라고 하면 됩니다.
+프로토콜이 명시되어 있을 경우 http://tokigun.net/ 처럼 자동으로 링크됩니다.
+[tokigun.net]은 페이지고 [[tokigun.net]]은 외부 링크입니다. :)
+당근 [[이렇게|tokigun.net]] 지정할 수도 있지요.
+
+필요할 경우 WikiWord를 escape할 수 있습니다.
+앞에 백틱(backtick)을 붙여 줍니다. `WikiWord 같이요.
+some`WikiWord`s 라고 하면 some, `WikiWord, s가 따로 따로 처리됩니다.
+같은 방법으로 http://tokigun.net/`과 같이 쓸 수도 있습니다.
+(참고로 backtick이 없으면 "과"도 링크에 들어 가 버립니다...)
+백틱은 \`와 같이 escape할 수 있습니다.
+(인터위키의 경우, someWiki:ThePage\`s 이렇게 해서 \`가 들어 간 페이지를 처리할 수 있습니다)
+
+페이지에 표시되지 않는 주석을 쓸 수 있습니다.
+// C 형태의 주석입니다.
+또는
+/* C++ 형태의 주석입니다.
+   여러 줄 써도 거뜬! 'ㅡ')/ */
+이렇게 쓰기도 합니다.
+
+간단한 heading 기능을 지원합니다. (PhpWiki style)
+! 1단!
+!! 2단!
+!!! 3단!
+!!!! 4단!
+!!!!! 5단!
+!!!!!! 6단!
+더 이상은 못 하겠습니다. -_-; (h7 같은 태그가 없으니 기각)
+!!!` 이 제목은 목차에 나오지 않습니다.
+{{
+참고로, 모든 backtick(\`)은 처리되지 않으면 사라집니다.
+고로 !!!\`와 같은 건 자동으로 사라지지요. :)
+목차 만들 때는 텍스트 첫 글자가 \`인 지 확인하고 넣을 지 말 지를 결정합니다.
+}}
+
+;정의목록:이렇게 하면 정의목록을 만들 수 있습니다.
+;;이중 정의목록:별로 추천은 안 합니다. -_-;
+;;;삼중 정의목록:압박입니다...
+;;;;종종 \:가 들어 간 정의목록:escape는 역시 \\.
+
+들여쓰기를 해 봅시다.
+> 하나
+>> 둘
+>>> 셋
+\>>> 이건 무시;
+
+* 총알 목록
+* 또 목록
+** 그렇고 그런 목록 -_-;
+** 또...
+*** 으악!
+
+# 숫자 목록
+# 또 목록
+## 귀찮은 관계로 "숫자"만 지원합니다.
+
+종종 줄을 긋고 싶을 때는
+---
+이렇게 합니다.
+
+정보나 특수 기능 같은 건 HTML Entity와 같은 방법으로 씁니다.
+(참고로, case-sensitive. 대소문자 바뀌면 그냥 표시..)
+{{
+&toc; -- 이건 영어로 Table of contents, 우리말로 목차-_-;
+&npages; -- 페이지 갯수입니다.
+&version; -- 현재 페이지 버전입니다. -_-;
+&author; -- 현재 페이지를 바꾼 사람 이름.
+&user; -- 현재 사용중인 유저 이름.
+&pagename; -- 현재 페이지 이름.
+등등...
+
+헛소리:
+&amp;, &quot;와 같은 기본 entity는 그냥 그대로 출력합니다.
+&temp;와 같이 잘못된 entity는 &amp;temp;와 같이 출력합니다.
+&user;와 같이 내부 entity는 tokigun과 같이 출력됩니다.
+
+__잠시 혼잣말__
+&pagename;은 상황에 따라서 여러 경우로 나뉠 수 있다.
+# 그냥 그대로 출력해서 TiniWiki parsing을 거치는 경우.
+# TiniWiki parsing에서 escape되어서 그대로 출력되는 경우.
+# bracket(링크,고정폭) 안에서 사용되는 경우.
+# bracket(외부링크) 안에서 사용되는 경우. (urlencode가 필요함)
+이런 이유로 &pagename;은 네 가지(사실은 세 가지;) 출력 모드를 가진다.
+# 그대로 출력: &pagename;
+# 보이는 게 그대로: &PageName;
+# 일반 bracket 안에서: &PageName; (같은 경우라고 생각해도 좋다.)
+# 링크용 주소: &paganame.url;
+}}
+
+외부 플러그인의 사용은 XML style-_-을 사용합니다.
+<?command-name property1="value1" property2="value2" />
+<?command>와 <?command />는 똑같은 명령입니다.
+필요한 경우 이렇게 씁니다: <?command>어쩌구<?/command>
+RecentChanges나 AllPages 같은 것들은 plugin 디렉토리에 이런 형태로 만들어져 있습니다.
+
+that's all, folks! :) (really?)
+
+
+# uri-style
+
+/wiki.php/ -- index page
+/wiki.php/PageName -- page "PageName"
+/wiki.php/.edit:PageName -- edit (or view source of) page "PageName"
+/wiki.php/PageName?## -- view version # of page "PageName"
+/wiki.php/.edit:PageName?## -- view source of version # of page "PageName"
+/wiki.php/diff=PageName -- view difference
+/wiki.php/diff=PageName?##,## -- ivew difference between version # and # of page "PageName"
+/wiki.php/create

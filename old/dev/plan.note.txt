@@ -1,0 +1,301 @@
+TiniWiki version 0.1
+note for development
+
+
+// listing 출력에 관련하여...
+
+0 x: 테스트	
+0 x: 		
+0 x: 테스트	
+3 1: > 테스트	p 태그를 닫고 blockquote 시작
+3 1: 그렇지!	
+3 2: >> 테스트	같으므로 다시 blockquote 시작
+2 1: * 바보	blockquote 두 개를 닫고 ul 시작, li 시작
+2 1: 그렇췌	
+1 1: # 멍충이	li 끝, ul 닫고 ol 시작
+2 2: ** 돼지	li 끝, ol 닫고 ul 두 번 시작
+2 2: ** 얼쑤	li 끝내고 다시 시작
+2 1: * 좋다!	li 끝내고 
+0 x: 		p 태그를 닫음
+0 x: 끝		
+
+<p>
+테스트
+</p><p>
+테스트
+</p><blockquote><p>테스트
+</p><blockquote><p>테스트
+</p></blockquote></blockquote><ul><li>바보
+</li></ul><ol><li>멍충이
+</li></ol><ul><ul><li>돼지
+</li><li>얼쑤
+</li></ul><li>좋다!
+</li></ul><p>
+끝
+</p>
+
+
+...이렇게 나와야 한다. 과연 가능한가? -_-;
+
+----
+수정 XHTML
+
+
+* 하나
+** 둘
+*** 셋
+*** 넷
+** 다섯
+***** 여섯
+** 일곱
+* 여덟
+
+출력 결과:
+<ul><li>
+하나
+<ul><li>
+둘
+<ul><li>
+셋
+</li><li>
+넷
+</li></ul></li><li>
+다섯
+<ul><li><ul><li><ul><li>
+여섯
+</li></ul></li></ul></li></ul>
+일곱
+</li></ul><li>
+여덟
+</li></ul>
+
+
+* 하나
+* 둘
+
+<ul><li>
+하나
+</li><li> --!
+둘
+</li></ul>
+
+*** 하나
+
+<ul><li><ul><li><ul><li>
+하나
+</li></ul></li></ul></li></ul>
+
+* 하나
+*** 둘
+
+<ul><li>
+하나
+<ul><li><ul><li>
+둘
+</li></ul></li></ul></li></ul>
+
+*** 하나
+* 둘
+
+<ul><li><ul><li><ul><li>
+하나
+</li></ul></li></ul>
+둘
+</li></ul>
+
+;하나:둘
+;셋:넷
+
+<dl><dt>
+하나
+</dt><dd>
+둘
+</dd><dt>
+셋
+</dt><dd>
+넷
+</dd></dl>
+
+;하나:둘
+;;셋:넷
+;;;;다섯:여섯
+;;일곱:여덟
+;아홉:열
+
+<dl><dt>
+하나
+</dt><dd>
+둘
+<dl><dt>
+셋
+</dt><dd>
+넷
+<dl><dl><dt>
+다섯
+</dt><dd>
+여섯
+</dd></dl></dl></dd><dt>
+일곱
+</dt><dd>
+여덟
+</dd></dl></dd><dt>
+아홉
+</dt><dd>
+열
+</dd></dl>
+
+
+열 때 태그들 (type 1)
+
+p: <p class="p">
+ul: {<ul class="ul"><li class="li">}
+blockquote: {<blockquote class="blockquote">}<p class="p">
+dl: {<dl class="dl">}<dt>
+
+{1}2
+
+닫을 때 태그들 (type 2)
+
+p: </p>
+ul: {</li></ul>}
+blockquote: </p>{</blockquote>}
+dl: </dd>{</dl>}
+
+3{4}
+
+레벨이 같을 때 태그들 (type 3)
+
+p: </p><p class="p">
+ul: </li><li class="li">
+blockquote: </p></blockquote><blockquote class="blockquote"><p class="p">
+dl: </dd><dt>
+
+5 = 6 7
+
+레벨이 낮아질 때 태그들 (type 3a)
+
+ul: {</li></ul>}</li><li class="li">
+blockquote: </p>{</blockquote>}<p class="p">
+dl: </dd>{</dl>}</dd><dt>
+
+6{4}7
+
+레벨이 높아질 때 태그들 (type 3b)
+
+ul: {<ul class="ul"><li class="li">}
+ul*: 
+blockquote: </p>{<blockquote class="blockquote">}<p class="p">
+dl: {<dl class="dl">}<dt>
+
+8{1}9
+
+
+
+---
+
+열 때 태그들 (type 1)
+
+p: <p class="p">
+ul: {<ul class="ul">}<li class="li">
+blockquote: {<blockquote class="blockquote">}<p class="p">
+
+닫을 때 태그들 (type 2)
+
+p: </p>
+ul: </li>{</ul>}
+blockquote: </p>{</blockquote>}
+
+레벨이 같을 때 태그들 (type 3)
+
+p: </p><p class="p">
+ul: </li><li class="li">
+blockquote: </p></blockquote><blockquote class="blockquote"><p class="p">
+
+레벨이 낮아질 때 태그들 (type 3a)
+
+ul: </li>{</ul>}<li class="li">
+blockquote: </p>{</blockquote>}<p class="p">
+
+레벨이 높아질 때 태그들 (type 3b)
+
+ul: </li>{<ul class="ul">}<li class="li">
+blockquote: </p>{<blockquote class="blockquote">}<p class="p">
+
+
+
+
+psuedo code
+
+if plisting == listing:
+	if plistlevel > listlevel:
+		type 3a, mode (listing), number (plistlevel - listlevel)
+	elif plistlevel < listlevel:
+		type 3b, mode (listing), number (listlevel - plistlevel)
+	else: // elif plistlevel == listlevel:
+		type 3, mode (listing) // number is always 0.
+else:
+	type 2, mode (plisting), number (plistlevel)
+	type 1, mode (listing), number (listlevel)
+
+
+
+
+
+
+
+
+JAB
+<dl><dt></dt><dd><dl><dt>
+J::::::::::::::::A:::::::
+
+JJAB
+<dl><dt></dt><dd><dl><dt></dt><dd><dl><dt>
+J::::::::::::::::J::::::::::::::::A:::::::
+
+HJJAI
+<dl><dt></dt><dd><dl><dt></dt><dd><dl><dt>
+J::::::::::::::::J::::::::::::::::A:::::::
+
+
+HJAI
+<dl><dt></dt><dd><dl><dt>
+J::::::::::::::::A:::::::
+
+
+
+particles
+
+A: <dl><dt>
+B: 
+C: 
+D: </dd></dl>
+E: </dd><dt>
+F: 
+G: </dd><dt>
+H: 
+I: 
+J: <dl><dt></dt><dd>
+
+
+
+
+
+
+
+
+;;하나
+;;하나
+;둘
+;;;;셋
+;;;낫
+;;;;;복
+;;함
+
+JAB 하나
+E 하나
+FDG 둘
+HJJAI 셋
+FDG 낫
+HJAI 복
+FDDDG 함
+CDD

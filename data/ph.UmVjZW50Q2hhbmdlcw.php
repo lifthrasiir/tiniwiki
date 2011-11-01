@@ -1,0 +1,6 @@
+<?php exit; ?>
+UmVjZW50Q2hhbmdlcw==	
+1	YW5vbnltb3Vz	127.0.0.1	1078631782	
+2	YW5vbnltb3Vz	127.0.0.1	1078632486	
+3	YW5vbnltb3Vz	127.0.0.1	1078632497	
+4	YW5vbnltb3Vz	127.0.0.1	1079109839	

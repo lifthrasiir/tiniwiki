@@ -1,0 +1,127 @@
+============================================================
+ @@@@@@ @@        @@ @@    @@ @@ @@    @@     ####      ##
+   @@                @@ @@ @@    @@          ##  ##    ###
+   @@   @@ @@@@@  @@ @@ @@ @@ @@ @@ @@ @@    ##  ##     ##
+   @@   @@ @@  @@ @@ @@ @@ @@ @@ @@@@  @@    ##  ## ##  ##
+   @@   @@ @@  @@ @@  @@@@@@  @@ @@ @@ @@     ####  ## ####
+------------------------------------------------------------
+ WikiDoc: Readme File (Korean)
+============================================================
+
+이 글은 한국어 설명서입니다. :)
+This is Korean README file. :)
+If you can't understand this file, read "README" file.
+
+
+TiniWiki는 뭐죠?
+----------------
+  
+  TiniWiki는 PHP로 만든 파일 DB 기반의 위키 엔진입니다.
+  
+  TiniWiki가 지향하는 목표는 단순합니다:
+    공개이고, 빠르며, 간단하고, 확장성이 좋으며, 그리고 귀여운 위키 엔진. :)
+  
+  잡소리: "귀여운"은 그냥 언어 유희입니다. cute -> pretty -> very 이런 거죠;
+  
+
+저작권
+------
+  
+  이 프로그램은 TOkinized Public License level 2 (TOPL2) 저작권을 따릅니다.
+  
+  여러분은 이 프로그램을 사용하고, 복사하고, 고칠 수 있습니다. 하지만:
+    - 이 프로그램을 다른 사람이 만들었다고 주장할 수 없습니다.
+    - 코드를 배포할 때에는 최초 배포본 그대로 배포해야 합니다.
+      단, 다음과 같은 경우는 허용됩니다:
+      . 한국어 문자열을 다른 언어로 번역할 경우
+      . 플러그인이나 테마 (해당 저작자를 명시해야 합니다.)
+  
+
+필수 요소
+---------
+  
+  이 프로그램은 다음과 같은 환경에서 돌아 갑니다.
+  
+  - PHP (4.1.0 이상)
+  - 웹서버 (아파치, IIS, ...)
+  - 웹 브라우저 (Lynx, w3m, 인터넷 익스플로러, 모질라, 오페라, ...)
+  
+
+설치
+----
+  
+  1. 일단, 다음 링크에서 프로그램을 받습니다:
+       http://dev.tokigun.net/tiniwiki/file/TiniWiki-0.1.tar.gz (tar.gz 형식)
+       http://dev.tokigun.net/tiniwiki/file/TiniWiki-0.1.zip (zip 형식)
+     아마 이 파일을 보고 있다면 이미 받은 거겠죠? :)
+  
+  2. data와 file 디렉토리, 그리고 그 안에 있는 파일들에 쓰기 속성을 부여합니다.
+     (웹서버가 해당 파일들을 고치거나 쓸 수 있어야 하기 때문입니다)
+     아마 다음과 같은 명령을 내리면 될 겁니다:
+       $ chmod 707 data
+       $ chmod 707 data/*
+       $ chmod 707 file
+     윈도우즈 사용자는 이 작업을 생략해도 됩니다. (아니, 생략해야 합니다. -_-;)
+  
+  3. "interwiki.map.default" 파일을 "interwiki.map"로,
+     "config.php.default" 파일을 "config.php"로 복사하거나 이름을 바꾸세요.
+     만약 이미 TiniWiki를 쓰던 중이라면 (프로그램 업데이트를 할 경우)
+     이 작업을 생략해도 됩니다만, 내용을 확인하고 바뀐 것들을 고쳐 줘야 합니다.
+  
+  4. 웹 브라우저를 띄워서 TiniWiki에 들어 가세요! :)
+  
+
+지원 / 관련 문서
+----------------
+  
+  http://dev.tokigun.net/tiniwiki/를 참고하세요.
+  
+
+변경 사항
+---------
+  
+  http://dev.tokigun.net/tiniwiki/wiki.php/ChangeLog를 참고하세요.
+  (ChangeLog를 파일로 넣기 귀찮아서...)
+  
+
+만든 이
+-------
+  
+  이 프로그램은 토끼군 강 성훈이 만들었습니다.
+    누리편지: zenith@tokigun.net
+    누리집: http://tokigun.net/ (한국어)
+  
+  이 프로그램에 포함된 테마의 제작자는 다음과 같습니다:
+    TiniWikiDefault                     토끼군 강 성훈
+  
+  몇몇 분들이 이 프로그램을 만드는 데 도움을 주셨습니다:
+    이 화섭 (ATply)                     http://atply.com/
+    배 성호 (9000MHz)                   http://sayq.org/
+    윤 성근 (Pe-i)                      http://orir.net/
+    김 용묵                             http://moogi.new21.org/
+    김 재주 (azurespace)                http://azure.raizel.net/
+    김 준기 (daybreaker)                http://daybreaker.x-y.net/
+    이 바로슬 (바로슬)                  http://barosl.com/
+  
+
+헛소리들
+--------
+  
+  - 되지도 않는 영어 가지고 README 파일 쓰느라 죽는 줄 알았습니다.
+    혹시 영어 잘 하시는 분께서 제 영어가 좀 이상하다 싶으시다면,
+    너그럽게 넘어 가 주세요. :)
+  
+  - TiniWiki 누리집은 현재 한국어로만 운영됩니다.
+    영어 누리집은... 귀찮은 관계로 넘어 가죠. -_-;
+  
+  - 졸라 바쁩니다... 살려 줘요! T_T (물론 농담)
+
+
+TiniWiki 누리집:
+  http://dev.tokigun.net/tiniwiki/ (한국어)
+  http://dev.tokigun.net/tiniwiki/en/ (영어; 아직 안 열었습니다)
+
+
+
+Copyright (c) 2004, Tokigun <zenith@tokigun.net>.
+

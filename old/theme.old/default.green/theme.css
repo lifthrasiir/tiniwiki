@@ -1,0 +1,351 @@
+/**********************************************************/
+/* CSSes for this theme                                   */
+/**********************************************************/
+
+/* Whole Document *****************************************/
+BODY {
+	background:		#000000;
+	margin:			0px;
+}
+FORM {
+	margin:			0px;
+}
+
+/* TiniWiki Logo ******************************************/
+P#themeLogo {
+	margin:			0px;
+}
+P#themeLogo IMG {
+	float:			left;
+	border:			0px;
+}
+
+/* Header of Theme ****************************************/
+DIV#themeHeader {
+	background:		#008000;
+	margin:			0px;
+	padding:		10px;
+}
+DIV#themeHeader H1 {
+	font-size:		24pt;
+	font-family:		Verdana;
+	font-weight:		bold;
+	margin:			0px;
+	color:			#FFFFFF;
+}
+DIV#themeHeader H1 SMALL {
+	font-size:		12pt;
+	font-family:		Verdana;
+	font-weight:		bold;
+	font-style:		italic;
+}
+DIV#themeHeader P {
+	font-size:		9pt;
+	font-family:		Verdana;
+	margin:			0px;
+	color:			#FFFFFF;
+}
+DIV#themeHeader P A {
+	color:			#FFFFFF;
+	text-decoration:	none;
+}
+DIV#themeHeader P A:hover {
+	text-decoration:	underline;
+}
+DIV#themeHeader FORM INPUT#wikiActionGoTo {
+	font-size:		9pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	border:			1px solid #FFFFFF;
+	background-color:	#008000;
+	color:			#FFFFFF;
+	margin:			-2px 0px 0px 0px; /* for MSIE */
+}
+
+/* Contents of Theme **************************************/
+DIV#themeContents {
+	background:		#FFFFFF;
+	padding:		5px;
+}
+
+/* Footer of Theme ****************************************/
+DIV#themeFooter {
+	background:		#008000;
+	margin:			0px;
+	padding:		5px;
+}
+DIV#themeFooter P {
+	font-size:		9pt;
+	font-family:		Verdana;
+	margin:			0px;
+	color:			#FFFFFF;
+}
+DIV#themeFooter P A {
+	color:			#FFFFFF;
+}
+
+/* Copyright Section of Theme *****************************/
+DIV#themeCopyright {
+	background:		#80C080;
+	margin:			0px;
+	padding:		5px;
+}
+DIV#themeCopyright P {
+	font-size:		8pt;
+	font-family:		Verdana;
+	margin:			0px 0px 4px 0px;
+	color:			#FFFFFF;
+}
+DIV#themeCopyright P A {
+	color:			white;
+	text-decoration:	underline;
+}
+DIV#themeCopyright P IMG.valid {
+	float:			left;
+	border:			0px;
+	margin:			0px 5px 0px 0px;
+}
+
+/* diff Action ********************************************/
+H2.heading A._diff {
+	color:			#400040 ! important;
+	text-decoration:	none;
+}
+H2.heading A._diff:hover {
+	text-decoration:	underline;
+}
+P.diff {
+	font-size:		10pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	margin:			0px;
+}
+P.diff_added {
+	font-size:		10pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	margin:			0px;
+	background-color:	#80C0C0;
+}
+P.diff_removed {
+	font-size:		10pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	margin:			0px;
+	background-color:	#C08080;
+}
+/*
+P.diff_modified_current {
+	font-size:		10pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	margin:			0px;
+	background-color:	#C0E0E0;
+	border:			2px solid #C0C080;
+	border-top:		0px;
+}
+P.diff_modified_previous {
+	font-size:		10pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	margin:			0px;
+	background-color:	#E0C0C0;
+	border:			2px solid #C0C080;
+	border-bottom:		0px;
+}
+*/
+
+/* Some Lists *********************************************/
+TABLE#pageHistory {
+	border:			1px solid black ! important;
+	margin-top:		10px;
+	border-collapse:	collapse;
+}
+TABLE#pageHistory TR.header {
+	background-color:	#C0C0C0;
+}
+TABLE#pageHistory TR.header TH {
+	padding:		3px 10px;
+}
+TABLE#pageHistory TR.header TH P {
+	font-size:		10pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	text-align:		center;
+}
+TABLE#pageHistory TR {
+	border-left:		1px solid #000000;
+	border-right:		1px solid #000000;
+}
+TABLE#pageHistory TR TD {
+	border-left:		1px solid #C0C0C0;
+	border-right:		1px solid #C0C0C0;
+	padding:		3px 10px;
+}
+TABLE#pageHistory TR TD P {
+	font-size:		10pt;
+	font-family:		Gulim, ±¼¸²;
+	margin:			0px;
+	text-align:		center;
+}
+
+
+/**********************************************************/
+/* CSSes for TiniWiki syntax                              */
+/**********************************************************/
+
+/* P ******************************************************/
+P.p {
+	font-size:		12pt;
+	font-family:		Gulim, ±¼¸²;
+	margin:			0px;
+	padding:		0.5em 0px;
+}
+
+/* Heading ************************************************/
+H1.heading {
+	font-size:		18pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	padding:		2px 5px;
+	background-color:	#C0C0E0;
+	border-bottom:		3px solid #8080C0;
+	color:			#000040;
+}
+H2.heading {
+	font-size:		16pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	padding:		2px 5px;
+	background-color:	#E0C0E0;
+	border-bottom:		3px solid #C080C0;
+	color:			#400040;
+}
+H3.heading {
+	font-size:		15pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	padding:		2px 5px;
+	background-color:	#E0C0C0;
+	border-bottom:		3px solid #C08080;
+	color:			#400000;
+}
+H4.heading {
+	font-size:		14pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	padding:		2px 5px;
+	background-color:	#E0E0C0;
+	border-bottom:		3px solid #C0C080;
+	color:			#404000;
+}
+H5.heading {
+	font-size:		12pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	padding:		2px 5px;
+	background-color:	#C0E0C0;
+	border-bottom:		3px solid #80C080;
+	color:			#004000;
+}
+H6.heading {
+	font-size:		11pt;
+	font-family:		Gulim, ±¼¸²;
+	font-weight:		bold;
+	margin:			0px;
+	padding:		2px 5px;
+	background-color:	#C0E0E0;
+	border-bottom:		3px solid #80C0C0;
+	color:			#004040;
+}
+
+H1.heading,
+H2.heading,
+H3.heading,
+H4.heading,
+H5.heading,
+H6.heading {
+margin-top: 5px !important;
+margin-bottom: 5px !important;
+}
+
+/* Horizonal Line *****************************************/
+HR.hr {
+	background-color:	#008000;
+	border:			0px;
+	height:			1px;
+	color:			#008000;
+}
+
+/* Link ***************************************************/
+A.link {
+	color:			#0000FF ! important;
+}
+A.no_link {
+	color:			#FF0000 ! important;
+}
+A.interwiki {
+	color:			#0000FF ! important;
+	font-weight:		bold;
+}
+A.netlink {
+	color:			#000080 ! important;
+	font-weight:		bold;
+}
+
+/* PRE/TT (Fixed Font) ************************************/
+PRE.pre {
+	font-size:		12pt;
+	font-family:		GulimChe, ±¼¸²Ã¼;
+	border:			1px solid #C0C0C0;
+	background:		#E0E0E0;
+	margin:			0px;
+	padding:		2px;
+}
+TT.tt {
+	font-size:		10pt;
+	font-family:		DotumChe, µ¸¿òÃ¼;
+}
+
+/* List ***************************************************/
+UL.ul {
+	margin-top:		5px;
+	margin-bottom;		5px;
+}
+OL.ol {
+	margin-top:		5px;
+	margin-bottom;		5px;
+}
+LI.li {
+	font-size:		12pt;
+	font-family:		Gulim, ±¼¸²;
+	margin-top:		2px;
+	margin-bottom:		2px;
+}
+UL.ul_invisible, OL.ol_invisible, LI.li_invisible {
+	list-style-type:	none;
+}
+
+/* Blockquote *********************************************/
+BLOCKQUOTE.blockquote {
+	margin-top:		0px;
+}
+
+/* PageList Plugins ***************************************/
+UL.pagelist {
+}
+UL.pagelist LI {
+	font-size:		12pt;
+	font-family:		Gulim, ±¼¸²;
+}
+UL.pagelist LI A.pagename {
+	font-weight:		bold;
+	color:			#0000FF ! important;
+}
+UL.pagelist LI SPAN.mtime {
+	font-size:		10pt;
+}
+UL.pagelist LI A.author {
+	color:			#0000FF ! important;
+}
+

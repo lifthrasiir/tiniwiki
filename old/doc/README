@@ -1,0 +1,127 @@
+============================================================
+ @@@@@@ @@        @@ @@    @@ @@ @@    @@     ####      ##
+   @@                @@ @@ @@    @@          ##  ##    ###
+   @@   @@ @@@@@  @@ @@ @@ @@ @@ @@ @@ @@    ##  ##     ##
+   @@   @@ @@  @@ @@ @@ @@ @@ @@ @@@@  @@    ##  ## ##  ##
+   @@   @@ @@  @@ @@  @@@@@@  @@ @@ @@ @@     ####  ## ####
+------------------------------------------------------------
+ WikiDoc: Readme File (English)
+============================================================
+
+
+What is TiniWiki?
+-----------------
+  
+  TiniWiki is a PHP-based tiny WikiEngine which used file database system.
+  
+  Its goal is simple: free, fast, simple, extensible, cute WikiEngine. :)
+  
+
+License
+-------
+  
+  TiniWiki, the PHP-based Tiny WikiEngine. version 0.1.-143.
+  Copyright (C) 2004, Kang Seonghoon (Tokigun).
+  
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  
+
+Requirements
+------------
+  
+  - PHP (>= 4.1.0)
+  - Web Server (Apache, IIS, ...)
+  - Web-browser (Lynx, w3m, MSIE, Mozilla, Opera, ...)
+  
+
+Installation
+------------
+  
+  1. First, download the program source at this link:
+       http://dev.tokigun.net/tiniwiki/file/TiniWiki-0.1.tar.gz (tar.gz format)
+       http://dev.tokigun.net/tiniwiki/file/TiniWiki-0.1.zip (zip format)
+     Maybe you already downloaded this file. :)
+  
+  2. Give write permissions of data/, file/ directories and their files.
+     (Because web server should be able to write and modify these.)
+     Maybe your command is:
+       $ chmod 707 data
+       $ chmod 707 data/*
+       $ chmod 707 file
+     If you use Windows, you can ignore(or *must* ignore) this step.
+  
+  3. Copy(or move) "interwiki.map.default" to "interwiki.map", and
+                   "config.php.default" to "config.php".
+     If you already use TiniWiki (upgrade to new version),
+     you aren't have to copy these file, but you should verify these files.
+  
+  4. Launch your web-browser and enter to your TiniWiki!
+  
+
+Support / Documentation
+-----------------------
+  
+  See http://dev.tokigun.net/tiniwiki/.
+  
+
+ChangeLog
+---------
+  
+  See http://dev.tokigun.net/tiniwiki/en/wiki.php/ChangeLog.
+  
+
+Credits
+-------
+  
+  This program is made by Kang Seonghoon, as known as Tokigun.
+    E-Mail: zenith (at) tokigun (dot) net
+    and Homepage: http://tokigun.net/ (Korean)
+  
+  Themes included this program are made by following people:
+    TiniWikiDefault                     Kang Seonghoon (Tokigun)
+  
+  Some people help me to develop this program:
+    Lee Hwaseob (a.k.a. ATply)          http://atply.com/
+    Bae Seongho (a.k.a. 9000MHz)        http://sayq.org/
+    Yoon Seonggeun (a.k.a. Pe-i)        http://orir.net/
+    Kim Yongmook                        http://moogi.new21.org/
+    Kim Jaejoo (a.k.a. azurespace)      http://azure.raizel.net/
+    Kim Joon-gi (a.k.a. daybreaker)     http://daybreaker.x-y.net/
+    Lee Baroseul (a.k.a. Barosl)        http://barosl.com/
+    
+    Thanks to a lot of their helps. :D
+  
+
+Some words
+----------
+  
+  - I can't speak and write very well in English.
+    So maybe I made some mistakes in this file.
+    If you see that mistake(s), forgive me generously. :)
+  
+  - Currently, TiniWiki homepage is only in Korean.
+    If you can't understand Korean pages, so sorry. :(
+  
+  - So busy... Help me! (Just joking)
+
+
+TiniWiki website:
+  http://dev.tokigun.net/tiniwiki/ (Korean)
+  http://dev.tokigun.net/tiniwiki/en/ (English; not available)
+
+
+
+Copyright (c) 2004, Tokigun <zenith@tokigun.net>.
+

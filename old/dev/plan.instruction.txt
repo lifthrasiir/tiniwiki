@@ -1,0 +1,50 @@
+몇 가지의 instruction들:
+
+view
+	pc.pagename을 읽는다.
+	(옛 버전이면 p#.pagename)
+edit
+	pc.pagename을 p#.pagename으로 이름 바꾼다.
+	pc.pagename에 바뀐 내용 쓴다.
+	plf.pagename과 plt.pagename 업데이트.
+	ph.pagename에 하나 추가한다.
+	pl에서 버전 바꾼다 (...)
+diff
+	p#.pagename 두 개(현재 버전이라면 pc.pagename)를 꺼낸다.
+	diff든 뭐든 써서 비교한다.
+info
+	ph.pagename의 내용 파싱해서 출력
+AllPages
+	#1: pl을 열고 파싱한다.
+	#2: pc.* 파일을 읽는다. (권장 안 함)
+RecentChanges
+	위와 동일 (...)
+FindPages (SearchPages)
+	그냥 다 뒤진다. 별 방법 없다 (...)
+
+
+format: pc.* or p#.*
+<pagename*>	<version>	<author*>	<authorip>	<mtime>	<tag*>
+<contents>
+<...>
+
+format: plf.* or plt.*
+<linked_from/to_pagename*>	<number_of_links>
+<...>
+/***************
+plt.*의 업데이트는 어렵지 않다. 완전히 뒤엎으면 된다.
+plf.*의 업데이트는 plt.*를 업데이트할 때 해당 페이지를 모두 접근해서 바꿔 준다.
+***************/
+
+format: ph.*
+<pagename*>	<links_to>	<links_from>	<tag*>
+<version>	<author*>	<authorip>	<mtime>	<tag*>
+<...>
+
+format: pl
+<pagename*>	<version>	<links_to>	<links_from>	<author*>	<authorip>	<mtime>	<tag*>
+<...>
+
+
+comment:
+앞에 <?php exit(0); ?>과 같은 코드를 추가하고 php로 파싱하면 출력을 막을 수 있다. (.htaccess 안 쓰고!)

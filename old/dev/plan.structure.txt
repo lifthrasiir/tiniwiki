@@ -1,0 +1,75 @@
+.....................................
+TiniWIki version 0.1 - File structure
+'''''''''''''''''''''''''''''''''''''
+
+
+wiki.php
+실제 들어 가는 파일
+
+wikiengine.php
+문법 파싱 담당
+
+interwiki.map
+인터위키 데이터베이스
+
+
+data/
+모든 데이터들
+	
+	ph.<pagename>.txt
+	페이지 버전 히스토리
+	
+	pc.<pagename>.txt
+	마지막 버전
+	
+	p<version>.<pagename>.txt
+	페이지 버전 별 데이터
+	
+	plt.<pagename>.txt
+	plf.<pagename>.txt
+	페이지 링크 목록
+	
+	pl.txt
+	페이지 목록
+	
+	* <pagename> = 1바이트 당 2byte로 hex code로 encode된 페이지 이름
+
+
+plugin/
+위키 플러그인들
+	
+	<pluginname>.php
+	플러그인 이름
+
+
+theme/
+테마들 (이 디렉토리가 아니어도 좋다)
+	
+	<themename>/
+	어떤 테마
+		
+		header.php
+		footer.php
+		앞뒤에 붙을 공통적인 부분
+		
+		view.php
+		view action에 필요한 부분
+		
+		edit.php
+		edit action에 필요한 부분
+
+
+
+////////////////////////////////////////////////////////////
+파일 형식
+
+페이지 이름 with base64_encode
+version
+유저이름 with base64_encode
+아이피 with dechex(...)
+바뀐 시각 with dechex(-_-;)
+
+한 줄에 몰아 넣기:
+tOu5rg:1:xeSzorG6:127.0.0.1:1088273790
+
+첫 줄에 이렇게 밀어 넣고 나중에 알아서 한다.

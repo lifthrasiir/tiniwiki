@@ -1,0 +1,50 @@
+TiniWiki version 0.1.-143
+Korean Manual
+
+
+안녕하세요, 토끼군 강 성훈입니다.
+이 프로그램은 텍스트 데이터베이스를 기반으로 하는 위키위키 클론입니다.
+위키위키에 대한 것은 http://c2.com/cgi/wiki를 참고하십시오.
+아직 문서는 변변찮은 게 없고 설치 부분만 정리했습니다.
+
+
+저작권:
+GNU Public License(GPL)을 따릅니다.
+
+
+설치:
+1. tar.gz 또는 zip 형식으로 압축된 배포 파일을 적당한 곳에 푸십시오.
+2. data 디렉토리에 쓰기 속성을 줍니다. (윈도우즈는 보통 생략해도...)
+3. config.php.default와 interwiki.map.default를 각각
+   config.php와 interwiki.map으로 복사합니다.
+4. config.php와 interwiki.map을 자기 좋을 대로-_- 고칩니다.
+   그냥 쓸 경우 config.php의 $wikiRoot만 TiniWiki 절대 주소로 고칩니다.
+5. 해당하는 웹 주소로 접속해서 첫 페이지를 만듭니다.
+
+
+지원되는 기능:
+- PhpWiki와 MoinMoin, wikiX 등에서 차용한 위키 문법들
+  o 글꼴(__bold__, ''italic'', {{fixedfont}})
+  o 문단/단락(%%%, {{{...}}})
+  o 내부 링크(WikiWord, extendedWikiWord, [page], [page|anchor])
+  o 외부 링크(http://somewhere, [[http://somewhere]], [[http://somewhere|anchor]])
+  o 제목, 리스트와 blockquote 블록(!, *, >, ;...:로 시작함)
+  o 플러그인(<?command attribute="value">...<?/command>)
+  o 테이블(|| column1 || column2 ||)
+  o XHTML 태그(<img src="something.png" width="10" height="10" alt="something" />)
+  o 기타 등등
+- 텍스트 기반의 페이지 관리 시스템 (data/에 저장됩니다.)
+- 동시 수정 감지 기능과 미리 보기 기능
+- XHTML 1.1 형식으로 페이지를 생성함
+- 다양한 형태의 플러그인 지원
+
+
+아직 지원 안 되는 기능:
+- 페이지 검색
+- 사용자 기능
+- TableOfContents 플러그인
+- 파일 업로드
+
+
+자세한 내용은 http://dev.tokigun.net/tiniwiki/를 참고하세요.
+

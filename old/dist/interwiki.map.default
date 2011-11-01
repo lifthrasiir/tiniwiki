@@ -1,0 +1,9 @@
+# interwiki.map
+# 
+# 일반적인 위키의 인터위키 맵과 같은 형식입니다. (사이트이름 주소)
+# %s가 들어 있을 경우도 지원합니다.
+# 이 줄처럼 #로 시작하거나, 빈 줄은 무시합니다.
+# 
+
+TiniWiki http://dev.tokigun.net/tiniwiki/wiki.php/
+

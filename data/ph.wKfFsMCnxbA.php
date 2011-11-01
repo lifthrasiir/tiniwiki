@@ -1,0 +1,5 @@
+<?php exit; ?>
+wKfFsMCnxbA=	
+1	YW5vbnltb3Vz	127.0.0.1	1078495116	
+2	YW5vbnltb3Vz	127.0.0.1	1078495131	
+3	YW5vbnltb3Vz	127.0.0.1	1078495160	
